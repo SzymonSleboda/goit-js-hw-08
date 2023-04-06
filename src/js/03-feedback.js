@@ -8,7 +8,11 @@ const refs = {
   textarea: document.querySelector('.feedback-form textarea'),
   input: document.querySelector('input'),
 };
-// const formData = {};
+
+const formData = {
+  message: refs.textarea.value,
+  email: refs.input.value,
+};
 
 function fillTextarea() {
   const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
@@ -50,7 +54,4 @@ if (refs.form) {
 
 fillTextarea();
 
-const formData = {
-  message: refs.textarea.value,
-  email: refs.input.value,
-};
+
