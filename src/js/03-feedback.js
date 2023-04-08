@@ -45,11 +45,10 @@ function submit(event) {
 }
 
 if (refs.form && refs.textarea) {
-  refs.form.addEventListener('input', onTextareaInput);
+  refs.form.addEventListener('input', throttle(onTextareaInput, 500));
 }
-
 if (refs.form) {
-  refs.form.addEventListener('submit', submit);
+  refs.form.addEventListener('submit', throttle(submit, 500));
 }
 
 fillTextarea();
